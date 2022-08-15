@@ -1,62 +1,33 @@
-// Assignment code here
+// variables for password combination
 var passwordLength = 0;
 var lowerCase = "abcdefghijklmnopqrstuvwxyz";
 var upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 var numbers = "0123456789";
 var symbols = "!@#$%^&*()_+=-{}[]|?><,. ";
 
+// confirmation variables
 var confirmUpper = false;
 var confirmLower = false;
 var confirmNum = false;
 var confirmSym = false;
 
+// Generate password function start
 var generatePassword = function() {
-  var textSpace  = "";
+  var textSpace = "";
   var passCode = "";
   while (!passwordLength) {
-    passwordLength = window.prompt("How long password?")
-
+    passwordLength = window.prompt("How many characters would you like your password to be?");
     passwordLength = parseInt(passwordLength);
-
     if (passwordLength > 128 || passwordLength < 8 || !passwordLength) {
-      window.alert("Your password must be more then X characters");
+      window.alert("Your password must be between 8 and 128 characters long.");
       passwordLength = 0;
+    } else {
+      break;
     }
   }
 
-    while (!confirmUpper && !confirmLower && !confirmNum && !confirmSym) {
-      confirmUpper = window.confirm("Yes to capital");
-      confirmLower = window.confirm("Yes to lowercase");
-      confirmNum = window.confirm("yes for numbers");
-      confirmSym= window.confirm("Yes for symbols");
+}
 
-    if (confirmUpper) {
-      textSpace += upperCase;
-    }
-
-    if (confirmLower) {
-      textSpace += lowerCase;
-    }
-
-    if (confirmNum) {
-      textSpace += numbers;
-    }
-
-    if (confirmSym) {
-      textSpace += symbols;
-    }
-
-    if (!confirmUpper && !confirmLower && !confirmNum && !confirmSym)
-      window.alert("your password must include one or more types");
-  }
- 
-    for (var i = 0; i < passwordLength; i++) {
-      passCode += textSpace [Math.floor(Math.random() * textSpace.length)]
-    }
-
-    return passCode;
-    
-  };
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
