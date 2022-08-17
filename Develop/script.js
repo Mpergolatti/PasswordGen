@@ -13,6 +13,7 @@ var confirmSym = false;
 
 // Generate password function start and character length restrictions
 var generatePassword = function() {
+  debugger;
   var textSpace = "";
   var passCode = "";
   while (!passwordLength) {
