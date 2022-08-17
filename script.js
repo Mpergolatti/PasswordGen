@@ -13,7 +13,6 @@ var confirmSym = false;
 
 // Generate password function start and character length restrictions
 var generatePassword = function() {
-  debugger;
   var textSpace = "";
   var passCode = "";
   while (!passwordLength) {
@@ -69,8 +68,10 @@ function writePassword() {
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
-
+  
 }
+
+
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
