@@ -13,4 +13,4 @@ The starter code had no functionality to create a unique password.
 
 ## Live link to website
 
-Live link at GitHub: [Password Gen]()
+Live link at GitHub: [Password Gen](https://mpergolatti.github.io/PasswordGen/)
